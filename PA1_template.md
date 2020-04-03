@@ -14,6 +14,7 @@ qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
 mean(total.steps, na.rm=TRUE)
 median(total.steps, na.rm=TRUE)
 ```
+![plot1](instructions_fig/plot1.png) 
 
 ## What is the average daily activity pattern?
 ```{r}
@@ -25,6 +26,7 @@ ggplot(data=averages, aes(x=interval, y=steps)) +
   xlab("5-minute interval") +
   ylab("average number of steps taken")
 ```
+![plot2](instructions_fig/plot2.png)
 
 On average across all the days in the dataset, the 5-minute interval contains
 the maximum number of steps?
@@ -66,6 +68,7 @@ qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
 mean(total.steps)
 median(total.steps)
 ```
+![plot3](instructions_fig/plot3.png)
 
 Mean and median values are higher after imputing missing data. The reason is
 that in the original data, there are some days with `steps` values `NA` for 
@@ -99,3 +102,4 @@ averages <- aggregate(steps ~ interval + day, data=filled.data, mean)
 ggplot(averages, aes(interval, steps)) + geom_line() + facet_grid(day ~ .) +
     xlab("5-minute interval") + ylab("Number of steps")
 ```
+![plot4](instructions_fig/plot4.png)
